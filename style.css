@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(1, 1, 1, 0.7);
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 6px #020929;
+    color: azure;
+    font-weight: 700;
+}
+
+.navbar .nav_menu ul {
+    list-style: none;
+}
+
+header .navbar .nav_menu ul li {
+    float: left;
+    position: relative;
+}
+
+header .navbar .nav_menu ul li a {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: azure;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+}
+
+.header .navbar .nav_menu ul li ul {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    background-color: rgba(1, 1, 1, 0.7);
+    display: none;
+}
+
+.header .navbar .nav_menu ul li ul li a {
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navbar .nav_menu ul li ul li {
+    width: 100%;   
+}
+
+.header .navbar .nav_menu ul li:hover > ul {
+    display: initial;
+}
+
+#menu,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+
+.nav_img {
+    width: 40px;
+    height: 35px;
+}
+
+.nav_item {
+    text-shadow: 4px 4px 6px #020929;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+.nav_item::after {
+    content: "";
+    display: block;
+    background-color: azure;
+    width: 90%;
+    margin-top: 4px;
+    height: 1px;
+    clip-path: var(--clippy);
+    transition: clip-path .5s;
+}
+
+.nav_item:hover { 
+    --clippy:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav_item1{
+    text-shadow: 4px 4px 6px #020929;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+.nav_item1::after {
+    content: "";
+    display: block;
+    background-color: azure;
+    width: 90%;
+    margin-top: 4px;
+    height: 1px;
+    clip-path: var(--clippy);
+    transition: clip-path .5s;
+}
+
+.nav_item1:hover { 
+    --clippy:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+@media(max-width:1000px) {
+    .header label {
+        display:  initial;
+    }
+
+    .header {
+        padding: 20px  10%;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .header .navbar .nav_menu ul li {
+        width: 100%;
+    }
+
+    .header .navbar .nav_menu ul li a {
+        padding: 8px 30px 8px 10%;
+    }
+
+    .header .navbar .nav_menu ul li ul {
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navbar .nav_menu ul li ul li {
+        background-color: rgba(1, 1, 1, 0.7);
+    }
+
+    .header .navbar .nav_menu ul li ul li a{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    #menu:checked ~ .navbar {
+        display: block;
+    }
+
+}
+
+.img {
+    min-height: 100vh;
+    background-image: url(https://images.wallpaperscraft.com/image/single/auto_black_style_83299_2560x1440.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
